@@ -1,0 +1,16 @@
+{
+  "name": "gex",
+  "version": "1.0.0",
+  "description": "Gene Expression Explorer",
+  "scripts": {
+    "start:backend": "cd backend && . .venv/bin/activate && uvicorn main:app --reload",
+    "start:frontend": "cd frontend && npm start",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "install:backend": "cd backend && python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt",
+    "install:frontend": "cd frontend && npm install",
+    "install": "npm run install:backend && npm run install:frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
